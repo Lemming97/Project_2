@@ -23,3 +23,7 @@ const sess = {
   app.use(session(sess));
 
   const helpers = require('./utils/helpers');
+
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
