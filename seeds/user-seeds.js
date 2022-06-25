@@ -1,6 +1,6 @@
 //users who can log in already 
 const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
+const { User} = require('../models');
 
 const userdata = [
   {
