@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const {
     Gallery,
-    plant,
     Plant
 } = require('../models');
 // Import the custom middleware
