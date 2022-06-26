@@ -23,6 +23,6 @@ const plantGalleryData = [
   },
 ];
 
-const seedGallery = () => plant_Gallery.bulkCreate(plantGalleryData);
+const seedGallery = () => Gallery.bulkCreate(plantGalleryData);
 
 module.exports = seedGallery;
