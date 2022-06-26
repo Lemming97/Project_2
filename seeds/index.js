@@ -16,7 +16,7 @@ const seedAll = async () => {
   console.log('Users');
 
   await seedGallery();
-  console.log('Users');
+  console.log('gallery');
 
   await seedPlants();
   console.log('plants');
