@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
                 attributes: ['filename', 'description'],
             }, ],
         });
+        console.log(dbGalleryData);
 
         const galleries = dbGalleryData.map((gallery) =>
             gallery.get({
