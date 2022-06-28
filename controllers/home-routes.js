@@ -1,5 +1,13 @@
 const router = require('express').Router();
+<<<<<<< HEAD
 const { Gallery, plant, Plant } = require('../models');
+=======
+const {
+    Gallery,
+    Plant
+} = require('../models');
+
+>>>>>>> 7d2ece05c2ec555e83b069de7c5aeec436a34cfd
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
