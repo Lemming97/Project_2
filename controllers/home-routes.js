@@ -48,7 +48,7 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
                     'filename',
                     'description',
                 ],
-            }, ],
+            }],
         });
 
     const gallery = dbGalleryData.get({ plain: true });
@@ -72,7 +72,7 @@ router.get('/plant/:id', withAuth, async (req, res) => {
         });
 
         res.render('plant', {
-            Plant,
+            plant,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
