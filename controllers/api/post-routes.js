@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../../models');
+const { Post, User, Plant } = require('../../models');
 
 // Get all post info /api/posts
 router.get('/', (req, res) => {
@@ -12,6 +12,17 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             }
         ]
+    })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/plants', (req, res) => {
+    console.log('======================');
+    Plant.findAll({
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {

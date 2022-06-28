@@ -21,8 +21,8 @@ const seedAll = async () => {
   await seedPlants();
   console.log('plants');
 
-  await seedComments();
-  console.log('comment');
+  // await seedComments();
+  // console.log('comment');
 
 
   process.exit(0);
