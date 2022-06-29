@@ -1,12 +1,15 @@
 const router = require('express').Router();
+<<<<<<< HEAD
 const {
     Gallery,
     Plant
 } = require('../models');
 
+=======
+const { Gallery, Plant, User } = require('../models');
+>>>>>>> develop
 // Import the custom middleware
 const withAuth = require('../utils/auth');
-
 
 
 // GET all galleries for homepage
@@ -53,21 +56,17 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
                     'filename',
                     'description',
                 ],
-            }, ],
+            }],
         });
 
-        const gallery = dbGalleryData.get({
-            plain: true
-        });
-        res.render('gallery', {
-            gallery,
-            loggedIn: req.session.loggedIn
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
+    const gallery = dbGalleryData.get({ plain: true });
+    res.render('plantGallery', { gallery, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
+
 
 
 // GET one plant
@@ -81,7 +80,7 @@ router.get('/plant/:id', withAuth, async (req, res) => {
         });
 
         res.render('plant', {
-            Plant,
+            plant,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {

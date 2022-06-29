@@ -52,7 +52,7 @@ Plant.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Plant',
+    modelName: 'plant',
 });
 
 module.exports = Plant;
