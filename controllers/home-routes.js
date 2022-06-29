@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gallery, Plant } = require('../models');
+const { Gallery, Plant, Post } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
@@ -55,7 +55,7 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
         const gallery = dbGalleryData.get({
             plain: true
         });
-        res.render('gallery', {
+        res.render('plantGallery', {
             gallery,
             loggedIn: req.session.loggedIn
         });
@@ -86,6 +86,7 @@ router.get('/plant/:id', withAuth, async (req, res) => {
     }
 });
 
+// LOGIN page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -95,21 +96,22 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// POSTS
-router.get('/post/:id', (req, res) => {
-    const post = {
-      id: 1,
-      post_url: 'https://handlebarsjs.com/guide/',
-      title: 'Handlebars Docs',
-      created_at: new Date(),
-      vote_count: 10,
-      comments: [{}, {}],
-      user: {
-        username: 'test_user'
-      }
-    };
+// POSTS page
+router.get('/post/:id', withAuth, async (req, res) => {
+    
+    try {
+    const dbPostdata = await Post.findByPk(req.params.id);
+
+    const post = dbPostdata.get({
+        plain: true
+    });
   
-    res.render('single-post', { post });
+    res.render('single-post', { post, loggedIn: req.session.loggedIn });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
   });
   
 module.exports = router;
