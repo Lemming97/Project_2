@@ -1,11 +1,12 @@
 {
   "name": "project_2",
   "version": "1.0.0",
-  "description": "",
+  "description": "![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)",
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "node server.js"
+    "start": "node server.js",
+    "nodemon": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -28,10 +29,12 @@
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "inquirer": "^9.0.0",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.0"
   },
   "devDependencies": {
-    "jest": "^28.1.1"
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.18"
   }
 }
