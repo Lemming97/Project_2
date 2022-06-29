@@ -26,11 +26,11 @@ Plant.init({
         allowNull: false,
     },
     features: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     care_instructions: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     filename: {
@@ -38,7 +38,7 @@ Plant.init({
         allowNull: false,
     },
     description: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     gallery_id: {
