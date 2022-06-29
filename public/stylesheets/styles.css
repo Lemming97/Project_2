@@ -30,13 +30,33 @@
     color: inherit;
   }
   
-  header {
+  /* header {
     font-family: 'Amatic SC', cursive;
     padding: 40px;
     text-align: center;
     background: var(--primary);
     color: var(--light);
-  }
+  } */
+
+  header {
+    padding: 20px 35px;
+    background-color: #D5F2EA;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../public/images/v986-bg-02d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
+    z-index: 9999;
+
+}
+
+
   
   main {
     display: flex;
