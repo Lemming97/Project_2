@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { Gallery, Plant, User } = require('../models');
+const { Gallery, Plant } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
+
 
 
 // GET all galleries for homepage
@@ -48,17 +49,21 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
                     'filename',
                     'description',
                 ],
-            }],
+            }, ],
         });
 
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('plantGallery', { gallery, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+        const gallery = dbGalleryData.get({
+            plain: true
+        });
+        res.render('gallery', {
+            gallery,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 });
-
 
 
 // GET one plant
@@ -72,7 +77,7 @@ router.get('/plant/:id', withAuth, async (req, res) => {
         });
 
         res.render('plant', {
-            plant,
+            Plant,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
@@ -90,4 +95,21 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// POSTS
+router.get('/post/:id', (req, res) => {
+    const post = {
+      id: 1,
+      post_url: 'https://handlebarsjs.com/guide/',
+      title: 'Handlebars Docs',
+      created_at: new Date(),
+      vote_count: 10,
+      comments: [{}, {}],
+      user: {
+        username: 'test_user'
+      }
+    };
+  
+    res.render('single-post', { post });
+  });
+  
 module.exports = router;
