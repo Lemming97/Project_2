@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gallery, Plant, Post } = require('../models');
+const { Gallery, Plant, Post, User } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
             include: [{
                 model: Plant,
                 attributes: ['filename', 'description'],
-            }, ],
+            },],
         });
 
         const galleries = dbGalleryData.map((gallery) =>
@@ -21,10 +21,26 @@ router.get('/', async (req, res) => {
             })
         );
 
+
+        const dbPostsData = await Post.findAll({
+            include: [{
+                model: User,
+                attributes: ['username'],
+            }]
+        });
+
+        const posts = dbPostsData.map((post) =>
+            post.get({
+                plain: true
+            })
+        );
+
         res.render('homepage', {
             galleries,
+            posts,
             loggedIn: req.session.loggedIn,
         });
+        
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -49,7 +65,7 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
                     'filename',
                     'description',
                 ],
-            }, ],
+            },],
         });
 
         const gallery = dbGalleryData.get({
@@ -98,20 +114,20 @@ router.get('/login', (req, res) => {
 
 // POSTS page
 router.get('/post/:id', withAuth, async (req, res) => {
-    
-    try {
-    const dbPostdata = await Post.findByPk(req.params.id);
 
-    const post = dbPostdata.get({
-        plain: true
-    });
-  
-    res.render('single-post', { post, loggedIn: req.session.loggedIn });
+    try {
+        const dbPostdata = await Post.findByPk(req.params.id);
+
+        const post = dbPostdata.get({
+            plain: true
+        });
+
+        res.render('single-post', { post, loggedIn: req.session.loggedIn });
 
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
-  });
-  
+});
+
 module.exports = router;
