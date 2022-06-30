@@ -12,7 +12,8 @@
   }
   
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Amatic SC', cursive;
+font-family: 'BIZ UDPGothic', sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -42,7 +43,7 @@
   } */
 
   header {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'BIZ UDPGothic', sans-serif;
     padding: 20px 35px;
     background-color: #D5F2EA;
     display: flex;
@@ -51,7 +52,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-image: url("/public/images/v986-bg-02d.jpg");
+    background-image: url("/public/background/v986-bg-02d.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -71,14 +72,8 @@ header h1 {
 
 
 
-header a {
-  text-decoration: none;
-  color: #0E5259;
-}
 
-header nav {
-  margin: 7px 0;
-}
+
 
 /* header nav ul {
   display: flex;
@@ -92,7 +87,9 @@ header nav {
 
 /* Hero Style Start */
 .hero {
-  background-image: url("/public/images/v986-bg-02d.jpg");
+  font-family: 'Amatic SC';
+  background-color: #D5F2EA;
+  background-image: url("/public/background/v986-bg-02d.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -151,6 +148,7 @@ header nav {
   }
   
   nav {
+    
     display: flex;
     background-color: var(--secondary);
   }
