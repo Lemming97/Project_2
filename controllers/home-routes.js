@@ -142,4 +142,34 @@ router.get('/post/:id', withAuth, async (req, res) => {
     }
 });
 
+//BLOG page
+router.get('/posts', async (req, res) => {
+    try {
+
+        const dbPostsData = await Post.findAll({
+            include: [{
+                model: User,
+                attributes: ['username'],
+            }]
+        });
+
+        const posts = dbPostsData.map((post) =>
+            post.get({
+                plain: true
+            })
+        );
+
+        res.render('blogs', {
+            posts,
+            loggedIn: req.session.loggedIn,
+            currentDay: formatDate()
+        });
+        
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+
 module.exports = router;
