@@ -1,13 +1,5 @@
 const router = require('express').Router();
-<<<<<<< HEAD
 const { Gallery, Plant, Post, User } = require('../models');
-=======
-const {
-    Gallery,
-    Plant,
-    User
-} = require('../models');
->>>>>>> Lindsey/Design
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 const dayjs = require('dayjs');
