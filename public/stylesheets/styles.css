@@ -52,7 +52,7 @@ font-family: 'BIZ UDPGothic', sans-serif;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-image: url("/public/background/v986-bg-02d.jpg");
+    background-image: url("v986-bg-02d.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -89,7 +89,7 @@ header h1 {
 .hero {
   font-family: 'Amatic SC';
   background-color: #D5F2EA;
-  background-image: url("/public/background/v986-bg-02d.jpg");
+  background-image: url("v986-bg-02d.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -114,13 +114,15 @@ header h1 {
 }
 
 .hero-cta h2 {
+   font-size: 75px;
   font-style: italic;
-  font-size: 55px;
+  
   color: #0E5259;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta p {
+  font-size: 35px;
   color: #328C83;
 }
 
