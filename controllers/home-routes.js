@@ -1,7 +1,23 @@
 const router = require('express').Router();
+<<<<<<< HEAD
 const { Gallery, Plant, Post, User } = require('../models');
+=======
+const {
+    Gallery,
+    Plant,
+    User
+} = require('../models');
+>>>>>>> Lindsey/Design
 // Import the custom middleware
 const withAuth = require('../utils/auth');
+const dayjs = require('dayjs');
+
+const formatDate = () => {
+    const rightNow = new Date();
+    // currentDay = dayjs(rightNow).format('MMMM D YYYY');
+    return dayjs(rightNow).format('MMMM D YYYY');
+}
+
 
 
 
@@ -39,6 +55,7 @@ router.get('/', async (req, res) => {
             galleries,
             posts,
             loggedIn: req.session.loggedIn,
+            currentDay: formatDate()
         });
         
     } catch (err) {
@@ -73,7 +90,8 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
         });
         res.render('plantGallery', {
             gallery,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            currentDay: formatDate()
         });
     } catch (err) {
         console.log(err);
@@ -93,8 +111,10 @@ router.get('/plant/:id', withAuth, async (req, res) => {
         });
 
         res.render('plant', {
-            Plant,
-            loggedIn: req.session.loggedIn
+            plant,
+            loggedIn: req.session.loggedIn,
+            currentDay: formatDate()
+
         });
     } catch (err) {
         console.log(err);

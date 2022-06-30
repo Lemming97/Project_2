@@ -7,6 +7,8 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 
+
+
 // var cloudinary = require('cloudinary');
 app = express();
 const PORT = process.env.PORT || 3001;
@@ -36,8 +38,11 @@ app.use(session(sess));
 
 //express templates
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.static(path.join(__dirname, '/public/')));
+// app.use(express.static(path.join(__dirname, '/images/')));
 
 // turn on routes
 app.use(routes);
