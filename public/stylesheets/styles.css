@@ -1,12 +1,12 @@
 /* Just including this for the purpose of testing the performance and layout. We will need to update this later once the site is up and running properly */
 
 :root {
-  --primary: #3d5852;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
+  --primary: #53A65F;
+  --secondary: #84BF8D;
+  --tertiary: #DEF2C9;
   --quatrinary: #6c6b67;
-  --light: #e3e4e3;
-  --dark: #182c23;
+  --light: #89D6AA;
+  --dark: #2C402F;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
 }
@@ -34,13 +34,6 @@ a:visited {
 
 /* header styling  */
 
-/* header {
-  font-family: 'Amatic SC', cursive;
-  padding: 40px;
-  text-align: center;
-  background: var(--primary);
-  color: var(--light);
-} */
 
 header {
   font-family: 'BIZ UDPGothic', sans-serif;
@@ -66,24 +59,9 @@ font-family: 'Amatic SC', cursive;
 /* font-weight: bold; */
 margin: 0;
 font-size: 36px;
-color: #0E5259;
+color: #3C9664;
 text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-
-
-
-
-
-/* header nav ul {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: center;
-list-style: none;
-
-} */
-
 
 /* Hero Style Start */
 .hero {
@@ -116,14 +94,14 @@ line-height: 1.2;
 .hero-cta h2 {
  font-size: 75px;
 font-style: italic;
-
-color: #0E5259;
+color: #39806C;
 text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta p {
+  font-weight: bold;
 font-size: 35px;
-color: #328C83;
+color: #3C9664;
 }
 
 /* hero-cta end */
@@ -152,23 +130,23 @@ header nav {
   margin: 7px 0;
 }
 
-header nav ul{
+header nav ul, #logout {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  color: #3C9664;
 
 }
 
 /* button styling */
 
 
-
 header nav ul li a, #logout {
   padding: 10px 15px;
-  font-weight: lighter;
-  font-size: 1.55vw;
+  font-weight: bold;
+  font-size: 36px;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   -webkit-transition: all 1s ease;
@@ -180,10 +158,11 @@ header nav ul li a, #logout {
 }
 
 header nav ul li a:hover, #logout:hover {
-  background: #0E5259;
-  color: #D5F2EA;
+  background: #53A65F;
+  color: #EDF2EB;
   border-radius: 15px;
   text-shadow: none;
+  text-decoration: none;
   /*    transition: .5s ease-in;*/
 }
 
@@ -203,6 +182,7 @@ header nav ul li a:hover, #logout:hover {
 }
 
 .btn-no-style {
+  font-family: 'Amatic SC';
   background: none;
   border: none;
   padding: 0;
@@ -210,7 +190,7 @@ header nav ul li a:hover, #logout:hover {
   text-decoration: none;
   font-size: 100%;
   transition: color 0.1s;
-  margin-left: 16px;
+  /* margin-left: 16px; */
 }
 
 img {
