@@ -10,40 +10,95 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-  href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
-  rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+    rel="stylesheet">
 
 
   <link rel="stylesheet" type="text/css" href="/stylesheets/jass.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
 
-  
+
 
 </head>
 
 <body>
   <header>
     <h1>HOMEGROWN PLANTS</h1>
+
+
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        {{#if loggedIn}}
+        <li>
+          <button id="logout" class="btn-no-style">Logout</button>
+        </li>
+        <li>
+          <a href="/posts">Blogs</a>
+        </li>
+         {{else}}
+         <li>
+           <a href="/login">login</a>
+        </li>
+       
+        {{/if}}
+
+      </ul>
+    </nav>
+
+
+
+    {{!-- <nav>
+      <a href="/">Home</a>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      <a href="/posts">Blogs</a>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
+    </nav> --}}
   </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
+
+  <section class="hero">
+    <div class="hero-cta">
+      <h2>Welcome</h2>
+      <p>Welcome to The HomeGrown Urban Jungle Blog</p>
+      <p>Click into our Seasonal Plant Gallery to view our newest plant recommendations. </p>
+      <p>You'll also be able to find tips on planting times as well as harvesting times.</p>
+      <p>Don't forget to log into your account to check out our blog! </p>
+      <p>Here, we'll share inspirational cooking recipes, gardening ideas, and fun facts about our plants.</p>
+
+      </p>
+    </div>
+
+
+  </section>
+  <!-- end header -->
+
   <main>
     <aside>
-      <h2>Enjoy the Plants!</h2>
+      <h2 id="shop-text">Boot your indoor gardening skills!</h2>
+      <p><a href="https://www.amazon.co.uk/Urban-Jungle-Living-Styling-Plants/dp/3766722441?SubscriptionId=AKIAIA3UEVTLIG7AIKFA&tag=invincibleh02-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=3766722441"><img src="https://images-eu.ssl-images-amazon.com/images/I/61WWo1YNcZL.jpg" class="product-image"></a></p>
+      <p id="shop-title">Urban Jungle: Living and Styling with Plants</p>
+      <p id="shop-details">By Judith de Graaff, Igor Josifovic (Urban Jungle Bloggers)</p>
     </aside>
     <div class="gallery">
+
       {{{body}}}
+
     </div>
   </main>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
   {{/if}}
+
+  <section id="footer">
+    <P>© 2021 HOMEGROWN HOUSEPLANTS</P>
+    <p> {{currentDay}}</p>
+    <p>Care Tips • Self-Watering • Deco Ideas & Green Inspiration</p>
+  </section>
 </body>
 
 </html>

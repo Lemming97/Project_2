@@ -4,7 +4,8 @@ const {
   Plant
 } = require('../models');
 
-const plantData = [{
+const plantData = [
+ {
     title: 'Clary Sage',
     family_name: 'Salvia Sclarea',
     bloom_time: 'Spring to summer',
@@ -83,7 +84,7 @@ const plantData = [{
     care_instructions: 'Fertilize regularly for best display. Allow soil to dry between thorough waterings. Orchid bark mix. Keep away from drafts. Allow soil to dry between thorough waterings. Repot every two years in the same container or in a container slightly larger than the diameter of the roots.',
     filename: 'orchid.png',
     description: 'close up of orchid plant with bits of pink and red in it',
-  },
+  }
 ];
 
 const seedPlants = () => Plant.bulkCreate(plantData);
