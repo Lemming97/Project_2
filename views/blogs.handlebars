@@ -5,53 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Grown</title>
-
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
     rel="stylesheet">
-
-
   <link rel="stylesheet" type="text/css" href="/stylesheets/jass.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
-
-
-
 </head>
 
 <body>
-  <header>
-    <h1>HOMEGROWN PLANTS</h1>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    <a href="/posts">Blogs</a>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
-  </header>
 
-  <section class="hero">
-    <div class="hero-cta">
-      <h2>Welcome</h2>
-      <p>Welcome to The HomeGrown Urban Jungle Blog
-
-      </p>
-    </div>
-
-
-  </section>
-  <!-- end header -->
+  <!-- HEADER -->
 
   <main>
-    <aside>
-      <h2>Enjoy the Plants!</h2>
-    </aside>
-    <div class="gallery">
       {{{body}}}
     </div>
   </main>
@@ -59,9 +26,11 @@
   <script src="/javascript/logout.js"></script>
   {{/if}}
 
-<section id="footer">Test 
+{{!-- <section id="footer">Test 
 {{currentDay}}
 </section>
-</body>
+</body> --}}
+
+{{!-- <script src="/javascript/dates.js"></script> --}}
 
 </html>
