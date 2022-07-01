@@ -84,17 +84,6 @@ const plantData = [
     care_instructions: 'Fertilize regularly for best display. Allow soil to dry between thorough waterings. Orchid bark mix. Keep away from drafts. Allow soil to dry between thorough waterings. Repot every two years in the same container or in a container slightly larger than the diameter of the roots.',
     filename: 'orchid.png',
     description: 'close up of orchid plant with bits of pink and red in it',
-  },
-
-  {
-    title: 'Clary Sage',
-    family_name: 'Salvia Sclarea',
-    bloom_time: 'Spring to summer',
-    gallery_id: 1,
-    features: 'The strongly aromatic leaves of Clary Sage are used in a variety of industries! Young leaves are used to flavor wines, beers and liqueurs. "Mascatel oil" is an important essential oil extract that is used to perfume soaps and cosmetics. At home, the large woolly leaves make a nice accent for brightly colored plants in borders or mixed container planting. The flowers may be used to brew tea, added to salads or used as a garnish on the dinner plate.',
-    care_instructions: 'Feed annually with organic matter. Allow soil to dry between thorough waterings. Use light, well-drained soil. Does best in light, well-drained soil. Allow soil to dry between thorough waterings. Remove faded flowers.',
-    filename: 'v986-bg-02d.jpg',
-    description: 'Clary Sage - Salvia sclarea image',
   }
 ];
 
