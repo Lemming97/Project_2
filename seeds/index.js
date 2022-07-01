@@ -1,5 +1,5 @@
 const seedUsers = require('./user-seeds');
-const seedComments = require('./comment-seeds');
+// const seedComments = require('./comment-seeds');
 const seedPlants = require('./plantData');
 const seedGallery = require('./plantGalleryData');
 
@@ -21,11 +21,13 @@ const seedAll = async () => {
   await seedPlants();
   console.log('plants');
 
-  await seedComments();
-  console.log('comment');
+  // await seedComments();
+  // console.log('comment');
 
 
   process.exit(0);
 };
 
-seedAll();
+seedAll().catch( error =>{
+  console.error(error);
+});
