@@ -1,9 +1,5 @@
 const router = require('express').Router();
-const {
-    Gallery,
-    Plant,
-    User
-} = require('../models');
+const { Gallery, Plant, Post, User } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 const dayjs = require('dayjs');
@@ -16,6 +12,7 @@ const formatDate = () => {
 
 
 
+
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
     try {
@@ -23,7 +20,7 @@ router.get('/', async (req, res) => {
             include: [{
                 model: Plant,
                 attributes: ['filename', 'description'],
-            }, ],
+            },],
         });
 
         const galleries = dbGalleryData.map((gallery) =>
@@ -31,12 +28,28 @@ router.get('/', async (req, res) => {
                 plain: true
             })
         );
-    
+
+
+        const dbPostsData = await Post.findAll({
+            include: [{
+                model: User,
+                attributes: ['username'],
+            }]
+        });
+
+        const posts = dbPostsData.map((post) =>
+            post.get({
+                plain: true
+            })
+        );
+
         res.render('homepage', {
             galleries,
+            posts,
             loggedIn: req.session.loggedIn,
             currentDay: formatDate()
         });
+        
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -61,7 +74,7 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
                     'filename',
                     'description',
                 ],
-            }],
+            },],
         });
 
         const gallery = dbGalleryData.get({
@@ -77,7 +90,6 @@ router.get('/gallery/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 
 // GET one plant
@@ -102,6 +114,7 @@ router.get('/plant/:id', withAuth, async (req, res) => {
     }
 });
 
+// LOGIN page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -110,5 +123,53 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
+
+// POSTS page
+router.get('/post/:id', withAuth, async (req, res) => {
+
+    try {
+        const dbPostdata = await Post.findByPk(req.params.id);
+
+        const post = dbPostdata.get({
+            plain: true
+        });
+
+        res.render('single-post', { post, loggedIn: req.session.loggedIn });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+//BLOG page
+router.get('/posts', async (req, res) => {
+    try {
+
+        const dbPostsData = await Post.findAll({
+            include: [{
+                model: User,
+                attributes: ['username'],
+            }]
+        });
+
+        const posts = dbPostsData.map((post) =>
+            post.get({
+                plain: true
+            })
+        );
+
+        res.render('blogs', {
+            posts,
+            loggedIn: req.session.loggedIn,
+            currentDay: formatDate()
+        });
+        
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 
 module.exports = router;
