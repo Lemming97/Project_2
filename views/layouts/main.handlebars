@@ -24,15 +24,36 @@
 <body>
   <header>
     <h1>HOMEGROWN PLANTS</h1>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    <a href="/posts">Blogs</a>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
+
+
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        {{#if loggedIn}}
+        <li>
+          <button id="logout" class="btn-no-style">Logout</button>
+        </li>
+        <li>
+          <a href="/posts">Blogs</a>
+        </li>
+        {{/if}}
+
+      </ul>
+    </nav>
+
+
+
+    {{!-- <nav>
+      <a href="/">Home</a>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      <a href="/posts">Blogs</a>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
+    </nav> --}}
   </header>
 
   <section class="hero">
@@ -59,9 +80,9 @@
   <script src="/javascript/logout.js"></script>
   {{/if}}
 
-<section id="footer">Test 
-{{currentDay}}
-</section>
+  <section id="footer">Test
+    {{currentDay}}
+  </section>
 </body>
 
 </html>
