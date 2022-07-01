@@ -12,7 +12,8 @@
   }
   
   body {
-    font-family: Arial;
+    font-family: 'Amatic SC', cursive;
+font-family: 'BIZ UDPGothic', sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -30,12 +31,109 @@
     color: inherit;
   }
   
-  header {
+
+  /* header styling  */
+
+  /* header {
+    font-family: 'Amatic SC', cursive;
     padding: 40px;
     text-align: center;
     background: var(--primary);
     color: var(--light);
-  }
+  } */
+
+  header {
+    font-family: 'BIZ UDPGothic', sans-serif;
+    padding: 20px 35px;
+    background-color: #D5F2EA;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("v986-bg-02d.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
+    z-index: 9999;
+
+}
+
+header h1 {
+  font-family: 'Amatic SC', cursive;
+  /* font-weight: bold; */
+  margin: 0;
+  font-size: 36px;
+  color: #0E5259;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+/* header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+
+} */
+
+
+/* Hero Style Start */
+.hero {
+  font-family: 'Amatic SC';
+  background-color: #D5F2EA;
+  background-image: url("v986-bg-02d.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  background-attachment: fixed;
+  background-position: 80%;
+
+}
+
+/* Hero Style End */
+
+/* hero-cta start */
+.hero-cta {
+  width: 35%;
+  text-align: center;
+  margin: 3.5%;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.hero-cta h2 {
+   font-size: 75px;
+  font-style: italic;
+  
+  color: #0E5259;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta p {
+  font-size: 35px;
+  color: #328C83;
+}
+
+/* hero-cta end */
+
+
+
+
+
+
+
   
   main {
     display: flex;
@@ -52,6 +150,7 @@
   }
   
   nav {
+    
     display: flex;
     background-color: var(--secondary);
   }
@@ -94,14 +193,14 @@
     height: auto;
   }
   
-  .painting {
+  .plant {
     width: 50%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
   }
   
-  .painting-details {
+  .plant-details {
     text-align: center;
     padding: 10px 20px;
     font-weight: bold;

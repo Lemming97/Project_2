@@ -7,9 +7,10 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const helpers = require('./utils/helpers');
 
-// var cloudinary = require('cloudinary');
 
-const app = express();
+
+// var cloudinary = require('cloudinary');
+app = express();
 const PORT = process.env.PORT || 3001;
 
 //handlebars templates
@@ -24,7 +25,7 @@ app.set('view engine', 'handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESSION_SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -37,12 +38,11 @@ app.use(session(sess));
 
 //express templates
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(express.static(path.join(__dirname, '/public/')));
-
-
-
-
+// app.use(express.static(path.join(__dirname, '/images/')));
 
 // turn on routes
 app.use(routes);

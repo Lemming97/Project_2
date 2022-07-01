@@ -22,15 +22,15 @@ Plant.init({
         allowNull: false,
     },
     bloom_time: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     features: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     care_instructions: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     filename: {
@@ -52,7 +52,7 @@ Plant.init({
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Plant',
+    modelName: 'plant',
 });
 
 module.exports = Plant;
