@@ -1,26 +1,35 @@
-<h3>{{post.title}}</h3>
+<link rel="stylesheet" type="text/css" href="/stylesheets/blog.css">
+
+<h3 class="title">{{post.title}}</h3>
 <p>{{post.post_description}}</p>
-<p>{{post.createdAt}}</p>
 
-<form class="comment-form">
+<h4 class="subtitle">
+    <p>What Are Your Thoughts?</p>
+  </h4>
+
+
+<form class="textarea comment-form">
   <div>
-    <textarea name="comment-body"></textarea>
+    <textarea class="form-control text-center" style="width: 700px;height: 180px;" name="comment-body"
+      id="comment" rows="3"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
-  </div>
+    <button class="btn btn-success" type="submit">add comment</button>
+</div>
 </form>
 
-<div class="comments">
+
+
+<div class="comment-section">
   {{#each post.comments}}
-  <section>
-    <div class>
+  <section class="comment">
+    <h5>
       {{user.username}}
-    </div>
-    <div>
+    </h5>
+    <p>
       {{comment_text}}
-    </div>
+    </p>
   </section>
   {{/each}}
 </div>
@@ -28,6 +37,3 @@
 {{log post}}
 
 <script src="/javascript/comments.js"></script>
-
-
-
