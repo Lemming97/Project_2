@@ -241,6 +241,7 @@ img {
 
 /* CARDS */
 .card {
+  display: inline-block;
   margin: 20px;
   flex: 0 1 300px;
   border: 7px double var(--dark);
@@ -250,10 +251,21 @@ img {
 }
 
 .plant-gallery-card {
+  flex: 4;
+  display: flex;
+  flex-flow: row wrap;
   width: 35%;
 
 }
-
+/* .gallery {
+  flex: 4;
+  background-color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+} */
 
 .login-card {
   margin: 0 0 20px 0;
