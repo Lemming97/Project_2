@@ -21,7 +21,7 @@ if (process.env.JAWSDB_URL) {
 
 // const Sequelize = require('sequelize');
 
-require('dotenv').config();
+// require('dotenv').config();
 
 // // create connection to our db
 // const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
