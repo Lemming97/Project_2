@@ -14,16 +14,18 @@
 
 <div class="comments">
   {{#each post.comments}}
-  <section class="comment">
-    <div class="meta">
-      {{user.username}} on {{created_at}}
+  <section>
+    <div class>
+      {{user.username}}
     </div>
-    <div class="text">
+    <div>
       {{comment_text}}
     </div>
   </section>
   {{/each}}
 </div>
+
+{{log post}}
 
 <script src="/javascript/comments.js"></script>
 
