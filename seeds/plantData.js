@@ -72,7 +72,7 @@ const plantData = [
     gallery_id: 4,
     features: 'An evergreen climber in its native South Africa, German Ivy is popular as an annual vine and houseplant. The lush, glossy foliage is similar in appearance to English Ivy and works well as a filler in annual combinations, or solo trailing from a hanging basket. Provide bright light and good air circulation if overwintering indoors.',
     care_instructions: 'Apply a balanced liquid fertilizer monthly. Keep soil evenly moist. Use fertile, well-drained soil. Best in fertile, well-drained soil. Keep soil moist, watering freely in dry weather. Apply a balanced liquid fertilizer monthly. Trim back as needed to keep neat and compact.',
-    filename: 'german-ivy.png',
+    filename: 'Germain-Ivy4.jpg',
     description: 'white pot of german ivy sitting on a desk',
   },
   {
