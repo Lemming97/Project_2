@@ -2,6 +2,7 @@ const seedUsers = require('./user-seeds');
 const seedPlants = require('./plantData');
 const seedGallery = require('./plantGalleryData');
 const seedPosts = require('./post-seeds');
+const seedComments = require('./comment-seeds');
 const sequelize = require('../config/connection');
 
 
@@ -23,6 +24,8 @@ const seedAll = async () => {
   await seedPosts();
   console.log('posts');
 
+  await seedComments();
+  console.log('Comments');
 
   process.exit(0);
 };

@@ -18,7 +18,14 @@ Post.init(
         post_description: {
             type: DataTypes.TEXT,
             allowNull: false,
-            defaultValue: "TEXT"
+        },
+        short_description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
