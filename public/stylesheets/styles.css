@@ -254,6 +254,60 @@ img {
 
 }
 
+/* forms */
+.comment-form {
+  margin-bottom: 5%;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
+
+.new-post-form input {
+  width: 300px;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+button {
+  background-color:#0c5b4c;
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #2a9030;
+}
+
+/* single post */
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+}
+
+.post h3{
+  font-size: 90%;
+  color: #097932;
+}
+
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+}
 
 .login-card {
   margin: 0 0 20px 0;
@@ -318,3 +372,4 @@ img {
   text-align: center;
   text-shadow: 2px 2px 0px #edf2eb, 4px 4px 0px rgb(0 0 0 / 15%);
 }
+

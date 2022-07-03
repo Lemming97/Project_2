@@ -19,8 +19,16 @@
   <!-- HEADER -->
 
   <main>
-      {{{body}}}
+    <div>
+      <ol class="post-list">
+        {{#each posts as |post|}}
+        <li>
+          {{> post-details post }}
+        </li>
+        {{/each}}
+      </ol>
     </div>
+
   </main>
   {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>

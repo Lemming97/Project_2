@@ -9,7 +9,7 @@ const postData = [
     {
         title: "Roses are good",
         post_description: "Roses are good becuase the colors are great!",
-        user_id: "2"
+        user_id: "1"
     }
 ]
 

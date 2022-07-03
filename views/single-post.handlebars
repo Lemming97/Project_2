@@ -1,7 +1,28 @@
-<h3>{{post.title}}</h3>
-<p>{{post.post_description}}</p>
-<p>{{post.createdAt}}</p>
 
 
+<article class="post">
+  <h3>{{post.title}}</h3>
+  <p>{{post.post_description}}</p>
+  <p>{{format_date post.createdAt}}</p>
+</article>
 
+
+{{> comments post.comments}}
+
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
 
