@@ -19,7 +19,9 @@
   <!-- HEADER -->
 
   <main>
-      {{{body}}}
+    {{#each posts as |post|}}
+    {{> post-details}}
+    {{/each}}
     </div>
   </main>
   {{#if loggedIn}}

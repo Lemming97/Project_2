@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gallery, Plant, Post, User } = require('../models');
+const { Gallery, Plant, Post, User, Comment } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 const dayjs = require('dayjs');
@@ -49,7 +49,7 @@ router.get('/', async (req, res) => {
             loggedIn: req.session.loggedIn,
             currentDay: formatDate()
         });
-        
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -128,7 +128,28 @@ router.get('/login', (req, res) => {
 router.get('/post/:id', withAuth, async (req, res) => {
 
     try {
-        const dbPostdata = await Post.findByPk(req.params.id);
+        const dbPostdata = await Post.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Comment,
+                    attributes: [
+                        'id',
+                        'comment_text',
+                        'user_id',
+                    ],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
+                    model: User,
+                    attributes: [
+                        'username'
+                    ]
+                }
+            ]
+        });
 
         const post = dbPostdata.get({
             plain: true
@@ -147,10 +168,12 @@ router.get('/posts', async (req, res) => {
     try {
 
         const dbPostsData = await Post.findAll({
-            include: [{
-                model: User,
-                attributes: ['username'],
-            }]
+            include: [
+                {
+                    model: User,
+                    attributes: ['username'],
+                }
+            ]
         });
 
         const posts = dbPostsData.map((post) =>
@@ -164,7 +187,7 @@ router.get('/posts', async (req, res) => {
             loggedIn: req.session.loggedIn,
             currentDay: formatDate()
         });
-        
+
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
