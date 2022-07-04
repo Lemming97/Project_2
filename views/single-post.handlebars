@@ -29,14 +29,19 @@
     </h5>
     <p>
       {{comment_text}}
+    <span id="comment-id">{{id}}</span>
     </p>
+    {{log id}}
+   
+<div class="editDelete-container">
+ 
+  <button class="btn edit-comment-btn"><i class="fa fa-edit"></i></button>
+  <button class="btn delete-comment-btn"><i class="fa fa-trash"></i></button>
+</div>
 
-    <button type="submit">edit</button>
-    <button type="button" class="delete-comment-btn">delete</button>
   </section>
   {{/each}}
 </div>
 
-{{log post}}
-
 <script src="/javascript/comments.js"></script>
+<script src="/javascript/delete-comment.js"></script>
