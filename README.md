@@ -16,10 +16,23 @@
 
 ## Installation 
 
+1. Clone the repository from GitHub
+1. Install `node.js`
+1. Run `npm install` to install dependencies. Dependencies include mysql, console.table, express, inquirer, ........
+1. Run `mysql -u root -p` to start the database connection. 
+1. Updated `connection.js` file with your own mysql user password. 
+1. Create the database by running the command: `source db/schema.sql`.
+1. Seed the database by running the command: `source db/seeds.sql`.
+1. Run `npm start` to start the web server and connect
+
  
 ## User Story
 
 ```md
+AS A plant blogger
+I WANT to be able to view seasonal plant tips, as well view blog posts about gardening tips
+SO THAT I can organize and grow my gardening tips
+
 
 ```
 
@@ -56,14 +69,17 @@ Have a quality README (with unique name, description, technologies used, screens
 ```
 
 
-## Video
-
 
 ## Screenshots
+
+<br><img src="./public/images/Screen1.png" alt="screenshot of start tables" width="350"/>
+<br><img src="./public/images/Screen2.png" alt="screenshot of seasonal plants" width="350"/>
+<br><img src="./public/images/Screen3.png" alt="screenshot of new plants" width="350"/>
+<br><img src="./public/images/Screen4.png" alt="screenshot of blog posts" width="350"/>
 
 
 
 
 ## Usage
+To build a gardening database, using Node.js, Inquirer, and MySQL.
 
-## Testing
