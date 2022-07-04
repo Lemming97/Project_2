@@ -27,8 +27,9 @@ a {
   text-decoration: none;
 }
 
-a:visited {
+a:visited, a:active, a:active, a:link{
   color: inherit;
+  text-decoration: none;
 }
 
 
@@ -45,7 +46,7 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-image: url("v986-bg-02d.jpg");
+  background-image: url("rm422-047.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -67,7 +68,7 @@ header h1 {
 .hero {
   font-family: 'Amatic SC';
   background-color: #D5F2EA;
-  background-image: url("v986-bg-02d.jpg");
+  background-image: url("rm422-047.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
