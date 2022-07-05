@@ -31,6 +31,7 @@ router.get('/:id', (req, res) => {
         return;
       }
       res.json(dbPostData);
+      res.render('edit-comments', { comments, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
@@ -109,6 +110,25 @@ router.get('/edit/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.put('/post.id/:id', withAuth, async (req, res) => {
+  Comment.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: ['id', 'comment_text', 'user_id', 'created_at'],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
+  })
+
+    const postedBy = req.userId;
+    const comment = await CommentSchema.findById({ _id: comment.id });
+    console.log(comment, postedBy);
+  })
 
 
 module.exports = router;

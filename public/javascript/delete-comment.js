@@ -14,9 +14,9 @@ async function deleteFormHandler(event) {
     } else {
       alert(response.statusText);
     }
-console.log(deleteBtn.closest("div"));
+console.log(deleteBtn.closest("div").value);
   
 
 }
 
-deleteBtn.closest("div").addEventListener('click', deleteFormHandler);
+deleteBtn.addEventListener('click', deleteFormHandler);

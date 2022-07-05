@@ -162,12 +162,15 @@ header nav ul,
   background: none;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  margin: 1rem;
+    transition: all 0.1s ease;
+    transform: scale(1);
 }
 
 .editDelete-container .btn:hover {
-  text-shadow: black;
+cursor: pointer;
+  transform: scale(1.25);
+  filter: brightness(120%);
 }
 
 header nav ul li a,

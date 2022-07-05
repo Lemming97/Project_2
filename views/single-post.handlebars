@@ -24,18 +24,23 @@
 <div class="comment-section">
   {{#each post.comments}}
   <div class="comment">
-  <section class="comment">
+  <section class="comment-body">
     <h5>
       {{user.username}}
     </h5>
-    <p>
-      {{comment_text}}
+    <p class="comment-body">
+    {{comment_text}}
     <span id="comment-id">{{id}}</span>
     </p>
   </div>
     {{log id}}
-    <button class="btn edit-comment-btn"><i class="fa fa-edit"></i></button>
-    <button class="btn delete-comment-btn"><i class="fa fa-trash"></i></button>
+   
+<div class="editDelete-container">
+ 
+  <button class="btn edit-comment-btn" type="submit"><i class="fa fa-edit"></i>button</button>
+  <button class="btn delete-comment-btn"><i class="fa fa-trash"></i></button>
+</div>
+
   </section>
   {{/each}}
 </div>
@@ -43,4 +48,5 @@
 
 
 <script src="/javascript/comments.js"></script>
+<script src="/javascript/edit-comment.js"></script>
 <script src="/javascript/delete-comment.js"></script>
