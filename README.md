@@ -4,6 +4,7 @@
 ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description 
+HomeGrown Plants is a blog driven project that allows the user to view seasonal plants. It also allows the user to checkout blog articles, as well as comment on them. It is using Node.js, Bcrypt, Session, Handlebars and Sequelize and MySQL.
 
 ## Table of Contents
 * [Installation](#installation)
