@@ -31,13 +31,13 @@
     {{comment_text}}
     <span id="comment-id">{{id}}</span>
     </p>
-    {{log session.data.authenticated.username}}
-    {{#if session.data.authenticated.username}}
+    {{#if user.username}}
   <button class="btn edit-comment-btn" type="submit"><i class="fa fa-edit"></i></button>
   <button class="btn delete-comment-btn"><i class="fa fa-trash"></i></button>
   {{/if}}
   </section>
   {{/each}}
+    {{log req.session.email}}
 </div>
 
 
