@@ -12,8 +12,9 @@ HomeGrown Plants is a blog driven project that allows the user to view seasonal 
 * [Acceptance Criteria](#acceptance-criteria)
 * [Video](#video)
 * [Screenshots](#screenshots)
+* [Link](#link)
 * [Usage](#usage)
-* [Testing](#testing)
+
 
 ## Installation 
 
@@ -79,7 +80,9 @@ Have a quality README (with unique name, description, technologies used, screens
 <br><img src="./public/images/Screen4.png" alt="screenshot of blog posts" width="350"/>
 
 
+## Link
 
+WIP
 
 ## Usage
 To build a gardening database, using Node.js, Inquirer, and MySQL.
