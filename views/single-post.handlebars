@@ -23,8 +23,7 @@
 
 <div class="comment-section">
   {{#each post.comments}}
-  <div class="comment">
-  <section class="comment-body">
+  <section class="comment">
     <h5>
       {{user.username}}
     </h5>
@@ -32,15 +31,11 @@
     {{comment_text}}
     <span id="comment-id">{{id}}</span>
     </p>
-  </div>
-    {{log id}}
-   
-<div class="editDelete-container">
- 
-  <button class="btn edit-comment-btn" type="submit"><i class="fa fa-edit"></i> Edit</button>
+    {{log session.data.authenticated.username}}
+    {{#if session.data.authenticated.username}}
+  <button class="btn edit-comment-btn" type="submit"><i class="fa fa-edit"></i></button>
   <button class="btn delete-comment-btn"><i class="fa fa-trash"></i></button>
-</div>
-
+  {{/if}}
   </section>
   {{/each}}
 </div>

@@ -4,7 +4,12 @@ const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-    Comment.findAll()
+  const author = req.session.user_id;
+  Comment.findAll({
+    where: {
+      user_id: author
+    }
+    })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
       console.log(err);

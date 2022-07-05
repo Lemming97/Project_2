@@ -39,4 +39,4 @@ console.log("button was clicked");
   // }
 }
 
-document.querySelector('.edit-comment-btn').addEventListener('click', editFormHandler);
+//document.querySelector('.edit-comment-btn').addEventListener('click', editFormHandler);
