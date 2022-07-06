@@ -1,12 +1,22 @@
-<link rel="stylesheet" type="text/css" href="/stylesheets/blog.css">
+<section class="container">
 
-<section class="container flex-row justify-center">
-<h3 class="username">{{comment.username}}</h3>
-<p>{{comment.comment_text}}</p>
+  <div class="comment-section">
+    <a href="/comments/{{id}}"></a>
+    <section class="comment">
+      <h5>
+        {{user.username}}
+      </h5>
+      <p class="comment-body">
+        {{comment_text}}
+      </p>
 
+      <a href="/api/comments/{{id}}"><button class="editbtn editcommentbtn{{comment.id}}" type="submit"><i
+            class="fa fa-edit"></i></button></a>
+      {{!-- <a href="api/comments/{{id}}"></a><button class="deletebtn deletecommentbtn{{comment.id}}" type="submit"><i
+          class="fa fa-trash"></i></button></a> --}}
 
-<a href="api/comments/{{id}}"></a><button class="deletebtn deletecommentbtn{{comment.id}}" type="submit"><i
-    class="fa fa-trash"></i></button></a>
+    </section>
+  </div>
 
-  </section>
-
+</section>
+<script src="/javascript/comments.js"></script>
