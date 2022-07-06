@@ -1,4 +1,3 @@
-const { text } = require('body-parser');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
