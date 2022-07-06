@@ -8,7 +8,7 @@
   --light: #89D6AA;
   --dark: #2C402F;
   --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
+  /* --border-radius: 0.3rem; */
 }
 
 body {
@@ -271,11 +271,18 @@ img {
 .card {
   margin: 20px;
   flex: 0 1 300px;
-  border: 7px double var(--dark);
-  border-radius: 10px;
+  border: 4px solid #84BF8D;
+  border-radius: 5px;
   background-color: #DEF2C9;
   color: #89d6aa;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-image: linear-gradient(45deg, #53A65F,#CEF2B3) 1;
 }
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 
 .plant-gallery-card {
   width: 100%;
@@ -298,6 +305,7 @@ img {
   color: var(--light);
 }
 
+
 .card h3 {
   font-family: 'Amatic SC';
   font-size: 1.5em;
@@ -318,7 +326,6 @@ img {
 }
 
 .gallery-name {
-  /* text-transform: uppercase; */
   letter-spacing: 3px;
   text-shadow: 2px 2px 5px var(--secondary);
   border: 10px groove var(--light);
@@ -326,6 +333,7 @@ img {
   padding-bottom: 30px;
   padding-right: 100px;
   padding-left: 100px;
+  border-image: linear-gradient(to left, #CEF2B3, #84BF8D) 1 0;
 }
 
 /* LAYOUT */

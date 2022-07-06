@@ -82,7 +82,8 @@ Have a quality README (with unique name, description, technologies used, screens
 
 ## Link
 
-WIP
+<p>To View the Live Site: <a href="https://limitless-cliffs-35704.herokuapp.com/"> Click Here</a></p>
+
 
 ## Usage
 To build a gardening database, using Node.js, Inquirer, and MySQL.
