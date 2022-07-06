@@ -248,6 +248,7 @@ img {
   border-radius: 10px;
   background-color: #DEF2C9;
   color: #89d6aa;
+  justify-content: center;
 }
 
 .plant-gallery-card {
@@ -256,6 +257,7 @@ img {
   background-color: #fff;
   padding: 50px;
   display: flex;
+  justify-content: center;
 }
 
 .login-card {
