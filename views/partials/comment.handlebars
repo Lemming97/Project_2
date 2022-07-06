@@ -1,0 +1,21 @@
+<section class="container">
+
+  <div class="comment-section">
+    <section class="comment">
+      <h5>
+        {{user.username}}
+      </h5>
+      <p class="comment-body">
+        {{comment_text}}
+      </p>
+
+      {{#if isOwner}}
+      <a href="/api/comments/{{id}}"><button class="edit-btn edit-comment-btn" data-id="{{id}}" type="submit"><i
+            class="fa fa-edit"></i></button></a>
+      <a href="api/comments/{{id}}"></a><button class="delete-btn delete-comment-btn" data-id="{{id}}" type="submit"><i
+          class="fa fa-trash"></i></button></a>
+      {{/if}}
+    </section>
+  </div>
+
+</section>

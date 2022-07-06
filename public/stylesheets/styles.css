@@ -8,7 +8,7 @@
   --light: #89D6AA;
   --dark: #2C402F;
   --error: rgb(228, 46, 1);
-  --border-radius: 0.3rem;
+  /* --border-radius: 0.3rem; */
 }
 
 body {
@@ -39,12 +39,10 @@ a:visited, a:active, a:active, a:link{
 header {
   font-family: 'BIZ UDPGothic', sans-serif;
   padding: 20px 35px;
-  background-color: #D5F2EA;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: -webkit-sticky;
-  position: sticky;
   top: 0;
   background-image: url("rm422-047.jpg");
   background-size: cover;
@@ -145,6 +143,35 @@ header nav ul,
 
 /* button styling */
 
+/* delete/edit button */
+/* Container needed to position the button. Adjust the width as needed */
+.editDelete-container {
+  position: inline-block;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.editDelete-container img {
+  width: 32px;
+  height: 32px;
+
+}
+
+/* Style the button and place it in the middle of the container/image */
+.editbtn .deletebtn {
+  background: none;
+  top: 50%;
+  left: 50%;
+  margin: 1rem;
+    transition: all 0.1s ease;
+    transform: scale(1);
+}
+
+.editDelete-container .btn:hover {
+cursor: pointer;
+  transform: scale(1.25);
+  filter: brightness(120%);
+}
 
 header nav ul li a,
 #logout {
@@ -227,10 +254,17 @@ img {
   margin-bottom: 25px;
 }
 
-.product-block {
+.product-image {
   display: block;
     max-width: 100%;
     height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    
+}
+.product-image:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
 }
 
 
@@ -244,10 +278,16 @@ img {
 .card {
   margin: 20px;
   flex: 0 1 300px;
-  border: 7px double var(--dark);
-  border-radius: 10px;
+  border: 4px solid #84BF8D;
+  border-radius: 5px;
   background-color: #DEF2C9;
   color: #89d6aa;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-image: linear-gradient(45deg, #53A65F,#CEF2B3) 1;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .plant-gallery-card {
@@ -271,6 +311,7 @@ img {
   color: var(--light);
 }
 
+
 .card h3 {
   font-family: 'Amatic SC';
   font-size: 1.5em;
@@ -291,14 +332,17 @@ img {
 }
 
 .gallery-name {
-  /* text-transform: uppercase; */
+  font-family: 'Amatic SC';
+  font-size: 45px;
   letter-spacing: 3px;
+  color: #224D41;
   text-shadow: 2px 2px 5px var(--secondary);
   border: 10px groove var(--light);
   padding-top: 30px;
   padding-bottom: 30px;
   padding-right: 100px;
   padding-left: 100px;
+  border-image: linear-gradient(to left, #CEF2B3, #84BF8D) 1 0;
 }
 
 /* LAYOUT */
