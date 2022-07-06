@@ -326,7 +326,10 @@ img {
 }
 
 .gallery-name {
+  font-family: 'Amatic SC';
+  font-size: 45px;
   letter-spacing: 3px;
+  color: #224D41;
   text-shadow: 2px 2px 5px var(--secondary);
   border: 10px groove var(--light);
   padding-top: 30px;
