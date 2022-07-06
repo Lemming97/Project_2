@@ -42,13 +42,13 @@ router.get('/', async (req, res) => {
         plain: true,
       })
     );
-    res.render('homepage');
-    // res.render('homepage'), {
-    // //     // galleries,
-    // //     // posts,
-    // //     // loggedIn: req.session.loggedIn,
-    // //     // currentDay: formatDate()
-    // // });
+
+    res.render('homepage', {
+      galleries,
+      posts,
+      loggedIn: req.session.loggedIn,
+      currentDay: formatDate(),
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
