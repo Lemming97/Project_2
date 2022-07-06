@@ -8,7 +8,18 @@ const {
 // Get all users info /api/users
 router.get('/', (req, res) => {
   // Access our User model and run .findAll() method)
-  User.findAll()
+  User.findAll({
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title']
+        }
+      }
+    ]
+  })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
       console.log(err);

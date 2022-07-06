@@ -1,0 +1,24 @@
+<section class="container">
+
+<div class="comment-section">
+  <a href="/comments/{{id}}"></a>
+  <section class="comment">
+    <h5>
+      {{user.username}}
+    </h5>
+    <p class="comment-body">
+      {{comment_text}}
+    </p>
+
+    <a href="/api/comments/{{id}}"><button class="editbtn editcommentbtn{{comment.id}}" type="submit"><i
+          class="fa fa-edit"></i></button></a>
+    {{!-- <a href="api/comments/{{id}}"></a><button class="deletebtn deletecommentbtn{{comment.id}}" type="submit"><i
+        class="fa fa-trash"></i></button></a> --}}
+
+  </section>
+</div>
+
+</section>
+
+
+

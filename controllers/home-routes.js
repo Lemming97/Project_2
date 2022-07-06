@@ -156,7 +156,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
         });
 
         res.render('single-post', { post, loggedIn: req.session.loggedIn });
-
+      
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -193,6 +193,60 @@ router.get('/posts', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/:id', async (req, res) => {
+  try {
+    const dbCommentData = await Comment.findByPk(req.params.id, {
+      include: {
+        model: User,
+        attributes: ['username']
+      }
+    });
+
+    res.json(dbCommentData);
+    const comment = dbCommentData.get({
+      plain: true
+    });
+    res.render('edit-comments', { comment, loggedIn: req.session.loggedIn });
+    console.log(loggedIn);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+// router.get('/comments', async (req, res) => {
+//   try {
+
+//     const dbCommentsData = await Comment.findAll({
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['username'],
+//         }
+//       ]
+//     });
+
+//     const comments = dbCommentsData.map((comment) =>
+//       comment.get({
+//         plain: true
+//       })
+//     );
+//     res.render('edit-comments', {
+//       comments,
+//       loggedIn: req.session.loggedIn,
+//       currentDay: formatDate()
+//     });
+//     res.json(dbCommentsData);
+
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+
+
 
 
 module.exports = router;
