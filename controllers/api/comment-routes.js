@@ -4,11 +4,10 @@ const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-  const author = req.session.user_id;
+
   Comment.findAll({
-    where: {
-      user_id: author
-    }
+    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']
+    
     })
     .then(dbCommentData => res.json(dbCommentData))
     .catch(err => {
@@ -30,13 +29,14 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No comment found with this id' });
+    .then(dbCommentData => {
+      if (!dbCommentData) {
+        res.status(404).json({
+          message: 'No comment found with this id'
+        });
         return;
       }
-      res.json(dbPostData);
-      res.render('edit-comments', { comments, loggedIn: true });
+      res.json(dbCommentData);
     })
     .catch(err => {
       console.log(err);
@@ -61,7 +61,7 @@ router.post('/',withAuth,(req, res) => {
   }
 });
 
-router.delete('/:id',withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Comment.destroy({
         where: {
           id: req.params.id
@@ -80,8 +80,8 @@ router.delete('/:id',withAuth, (req, res) => {
         });
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
-  Comment.findByPk(req.params.id, {
+router.put('/:id', withAuth, (req, res) => {
+  Comment.put(req.params.id, {
     attributes: [
       'id', 
       'comment_text', 
@@ -99,41 +99,21 @@ router.get('/edit/:id', withAuth, (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
-      if (dbPostData) {
-        const post = dbPostData.get({ plain: true });
-
-        res.render('edit-comments', {
-          post,
-          loggedIn: true
+    .then(dbCommentData => {
+      if (!dbCommentData[0]) {
+        res.status(404).json({
+          message: 'No comment found with this id'
         });
-      } else {
-        res.status(404).end();
+        return;
       }
+      res.json(dbCommentData);
     })
     .catch(err => {
       res.status(500).json(err);
     });
 });
 
-router.put('/post.id/:id', withAuth, async (req, res) => {
-  Comment.findOne({
-    where: {
-      id: req.params.id
-    },
-    attributes: ['id', 'comment_text', 'user_id', 'created_at'],
-    include: [
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
 
-    const postedBy = req.userId;
-    const comment = await CommentSchema.findById({ _id: comment.id });
-    console.log(comment, postedBy);
-  })
 
 
 module.exports = router;

@@ -1,20 +1,21 @@
-const deleteBtn = document.querySelector('.delete-comment-btn');
+const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+const deleteBtn = document.querySelector(`#deletecommentbtn${id}`);
 const comment = document.querySelector('#comment');
 
 async function deleteFormHandler(event) {
   event.preventDefault();
   
-  console.log("testing delete button");
-  console.log(req.session.id);
   
-  const id = document.getElementById('comment-id').textContent;
-    const response = await fetch(`/api/comments/${id}`, {
+  
+  
+  console.log(id)
+    const response = await fetch(`api/post/${id}`, {
       method: 'DELETE'
     });
  
     if (response.ok) {
-     deleteBtn.parentElement.remove();
-      //document.location.reload();
+ 
+      document.location.reload();
     } else {
       alert(response.statusText);
     }

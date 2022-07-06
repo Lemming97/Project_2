@@ -21,27 +21,13 @@
 
 
 
-<div class="comment-section">
-  {{#each post.comments}}
-  <section class="comment">
-    <h5>
-      {{user.username}}
-    </h5>
-    <p class="comment-body">
-    {{comment_text}}
-    <span id="comment-id">{{id}}</span>
-    </p>
-    {{#if user.username}}
-  <button class="btn edit-comment-btn" type="submit"><i class="fa fa-edit"></i></button>
-  <button class="btn delete-comment-btn"><i class="fa fa-trash"></i></button>
-  {{/if}}
-  </section>
-  {{/each}}
-    {{log req.session.email}}
-</div>
+{{#each post.comments as |comment|}}
+{{> comment}}
+{{/each}}
+
 
 
 
 <script src="/javascript/comments.js"></script>
-<script src="/javascript/edit-comment.js"></script>
-<script src="/javascript/delete-comment.js"></script>
+{{!-- <script src="/javascript/edit-comment.js"></script>
+<script src="/javascript/delete-comment.js"></script> --}}

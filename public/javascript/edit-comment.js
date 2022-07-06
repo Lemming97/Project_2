@@ -1,20 +1,7 @@
 async function editFormHandler(event) {
   event.preventDefault();
-
-
-  const text = document.querySelector('.comment-body').textContent.trim();
-  const parent = document.querySelector('.comment-body');
-
-console.log(text);
-    const textInput = document.createElement("TEXTAREA");
-    textInput.value = text;
-
-   parent.appendChild(textInput);
  
 
-    
-
-console.log("button was clicked");
 
 
 
@@ -39,4 +26,4 @@ console.log("button was clicked");
   // }
 }
 
-//document.querySelector('.edit-comment-btn').addEventListener('click', editFormHandler);
+document.querySelector('.edit-comment-btn').addEventListener('click', editFormHandler);

@@ -1,9 +1,12 @@
-<form class="edit-comment-form">
-  <div>
-    <textarea class="form-control text-center" style="width: 700px;height: 180px;" name="comment-body" id="comment"
-      rows="3">{{>comment comment_text}} </textarea>
-  </div>
-  <button type="submit">Save</button>
-  <button type="button" class="btn delete-comment-btn">Delete</button>
-</form>
+<link rel="stylesheet" type="text/css" href="/stylesheets/blog.css">
+
+<section class="container flex-row justify-center">
+<h3 class="username">{{comment.username}}</h3>
+<p>{{comment.comment_text}}</p>
+
+
+<a href="api/comments/{{id}}"></a><button class="deletebtn deletecommentbtn{{comment.id}}" type="submit"><i
+    class="fa fa-trash"></i></button></a>
+
+  </section>
 
