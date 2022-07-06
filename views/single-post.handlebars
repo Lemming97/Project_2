@@ -21,19 +21,13 @@
 
 
 
-<div class="comment-section">
-  {{#each post.comments}}
-  <section class="comment">
-    <h5>
-      {{user.username}}
-    </h5>
-    <p>
-      {{comment_text}}
-    </p>
-  </section>
-  {{/each}}
-</div>
+{{#each post.comments as |comment|}}
+{{> comment}}
+{{/each}}
 
-{{log post}}
+
+
 
 <script src="/javascript/comments.js"></script>
+{{!-- <script src="/javascript/edit-comment.js"></script>
+<script src="/javascript/delete-comment.js"></script> --}}

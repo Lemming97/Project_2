@@ -39,12 +39,10 @@ a:visited, a:active, a:active, a:link{
 header {
   font-family: 'BIZ UDPGothic', sans-serif;
   padding: 20px 35px;
-  background-color: #D5F2EA;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: -webkit-sticky;
-  position: sticky;
   top: 0;
   background-image: url("rm422-047.jpg");
   background-size: cover;
@@ -145,6 +143,35 @@ header nav ul,
 
 /* button styling */
 
+/* delete/edit button */
+/* Container needed to position the button. Adjust the width as needed */
+.editDelete-container {
+  position: inline-block;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.editDelete-container img {
+  width: 32px;
+  height: 32px;
+
+}
+
+/* Style the button and place it in the middle of the container/image */
+.editbtn .deletebtn {
+  background: none;
+  top: 50%;
+  left: 50%;
+  margin: 1rem;
+    transition: all 0.1s ease;
+    transform: scale(1);
+}
+
+.editDelete-container .btn:hover {
+cursor: pointer;
+  transform: scale(1.25);
+  filter: brightness(120%);
+}
 
 header nav ul li a,
 #logout {

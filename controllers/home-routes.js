@@ -194,5 +194,85 @@ router.get('/posts', async (req, res) => {
     }
 });
 
+router.get('/comments', async (req, res) => {
+  try {
+
+    const dbCommentsData = await Comment.findAll({
+      include: [
+        {
+          attributes: [
+            'id',
+            'comment_text',
+            'user_id',
+          ],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+          model: User,
+          attributes: [
+            'username'
+          ]
+        }
+      ]
+    });
+
+    const comments = dbCommentsData.map((post) =>
+      comments.get({
+        plain: true
+      })
+    );
+
+    res.render('comment', {
+      comments,
+      loggedIn: req.session.loggedIn,
+      currentDay: formatDate()
+    });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/comments/:id', async (req, res) => {
+  try {
+    const dbCommentdata = await Comment.findByPk(req.params.id, {
+      include: [
+        {
+          attributes: [
+            'id',
+            'comment_text',
+            'user_id',
+          ],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        },
+        {
+          model: User,
+          attributes: [
+            'username'
+          ]
+        }
+      ]
+    });
+
+    const comment = dbCommentdata.get({
+      plain: true
+    });
+
+    res.render('comment', { comment, loggedIn: req.session.loggedIn });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
 
 module.exports = router;
