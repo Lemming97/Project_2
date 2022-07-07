@@ -22,7 +22,7 @@ app.set('view engine', 'handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-  secret: secret,
+  secret: 'secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -32,7 +32,6 @@ const sess = {
 };
 
 app.use(session(sess));
-
 
 //express templates
 app.use(express.json());
