@@ -9,7 +9,7 @@ const helpers = require('./utils/helpers');
 
 // var cloudinary = require('cloudinary');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3003;
 
 //handlebars templates
 const hbs = exphbs.create({
