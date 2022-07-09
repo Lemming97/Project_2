@@ -1,41 +1,38 @@
 # Project_2
 
-
 ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 
-## Description 
+## Description
+
 HomeGrown Plants is a blog driven project that allows the user to view seasonal plants. It also allows the user to checkout blog articles, as well as comment on them. It is using Node.js, Bcrypt, Session, Handlebars and Sequelize and MySQL.
 
 ## Table of Contents
-* [Installation](#installation)
-* [User Story](#user-story)
-* [Acceptance Criteria](#acceptance-criteria)
-* [Video](#video)
-* [Screenshots](#screenshots)
-* [Link](#link)
-* [Usage](#usage)
 
+- [Installation](#installation)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Video](#video)
+- [Screenshots](#screenshots)
+- [Link](#link)
+- [Usage](#usage)
 
-## Installation 
+## Installation
 
 1. Clone the repository from GitHub
 1. Install `node.js`
 1. Run `npm install` to install dependencies. Dependencies include mysql, console.table, express, inquirer, ........
-1. Run `mysql -u root -p` to start the database connection. 
-1. Updated `connection.js` file with your own mysql user password. 
+1. Run `mysql -u root -p` to start the database connection.
+1. Updated `connection.js` file with your own mysql user password.
 1. Create the database by running the command: `source db/schema.sql`.
 1. Seed the database by running the command: `source db/seeds.sql`.
 1. Run `npm start` to start the web server and connect
 
- 
 ## User Story
 
 ```md
 AS A plant blogger
 I WANT to be able to view seasonal plant tips, as well view blog posts about gardening tips
 SO THAT I can organize and grow my gardening tips
-
-
 ```
 
 ## Acceptance Criteria
@@ -70,8 +67,6 @@ Have a clean repository that meets quality coding standards (file structure, nam
 Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
 
-
-
 ## Screenshots
 
 <br><img src="./public/images/Screen1.png" alt="screenshot of start tables" width="350"/>
@@ -79,12 +74,10 @@ Have a quality README (with unique name, description, technologies used, screens
 <br><img src="./public/images/Screen3.png" alt="screenshot of new plants" width="350"/>
 <br><img src="./public/images/Screen4.png" alt="screenshot of blog posts" width="350"/>
 
-
 ## Link
+
 <p>To View the Live Site: <a href="https://limitless-cliffs-35704.herokuapp.com/"> Click Here</a></p>
 
-
-
 ## Usage
-To build a gardening database, using Node.js, Inquirer, and MySQL.
 
+To build a gardening database, using Node.js, and MySQL.
