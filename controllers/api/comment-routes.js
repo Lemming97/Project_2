@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const  Comment  = require('../../models/Comment.js');
 
 router.get('/', (req, res) => {
   Comment.findAll()
@@ -45,7 +45,5 @@ router.delete('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-module.exports = router;
 
 module.exports = router;
