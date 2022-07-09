@@ -86,5 +86,5 @@ Have a quality README (with unique name, description, technologies used, screens
 
 
 ## Usage
-To build a gardening database, using Node.js, Inquirer, and MySQL.
+To build a gardening database, using Node.js, and MySQL.
 
