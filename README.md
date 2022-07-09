@@ -14,6 +14,7 @@ HomeGrown Plants is a blog driven project that allows the user to view seasonal 
 * [Screenshots](#screenshots)
 * [Link](#link)
 * [Usage](#usage)
+* [Built With](#built-with)
 
 
 ## Installation 
@@ -51,7 +52,7 @@ Have both GET and POST routes for retrieving and adding new data.
 
 Be deployed using Heroku (with data).
 
-Use at least one new library, package, or technology that we haven’t discussed.
+Use at least one new library, package, or technology that we haven't discussed.
 
 Have a polished UI.
 
@@ -81,10 +82,28 @@ Have a quality README (with unique name, description, technologies used, screens
 
 
 ## Link
-<p>To View the Live Site: <a href="https://limitless-cliffs-35704.herokuapp.com/"> Click Here</a></p>
+<p>To View the Live Site: <a href="https://floating-island-17357.herokuapp.com/"> Click Here</a></p>
 
 
 
 ## Usage
-To build a gardening database, using Node.js, and MySQL.
+To build a gardening community using Node.js, and MySQL.
 
+## Built With
+
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+* [NodeJS](https://nodejs.org/en/)
+* [MySQL](https://www.mysql.com/)
+
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [express](https://www.npmjs.com/package/express)
+* [mysql2](https://www.npmjs.com/package/mysql2)
+* [sequelize](https://www.npmjs.com/package/sequelize)
+* [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+* [express-session](https://www.npmjs.com/package/express-session)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [dayajs](https://www.npmjs.com/package/daysjs)
