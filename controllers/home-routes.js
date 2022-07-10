@@ -6,7 +6,6 @@ const dayjs = require('dayjs');
 
 const formatDate = () => {
   const rightNow = new Date();
-  // currentDay = dayjs(rightNow).format('MMMM D YYYY');
   return dayjs(rightNow).format('MMMM D YYYY');
 };
 
