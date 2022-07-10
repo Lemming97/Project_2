@@ -202,7 +202,6 @@ header nav ul li a:hover,
 
 
 
-
 .gallery {
   flex: 4;
   background-color: #fff;
@@ -346,6 +345,9 @@ img {
   padding-left: 100px;
   border-image: linear-gradient(to left, #CEF2B3, #84BF8D) 1 0;
 }
+
+
+
 
 /* LAYOUT */
 .container {

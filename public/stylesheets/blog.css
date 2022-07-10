@@ -1,8 +1,21 @@
-p {
+.post-body {
     line-height: 2;
 }
 
+.post-details{
+    display: flex;
+    /* flex: 0; */
+    flex-flow: column wrap;
+    align-content: flex-start;
+    align-items: center;
+  }
+  
+
 .title {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    align-items: center;
     color: #53A65F;
     line-height: 3;
 }
