@@ -6,7 +6,6 @@ const dayjs = require('dayjs');
 
 const formatDate = () => {
   const rightNow = new Date();
-  // currentDay = dayjs(rightNow).format('MMMM D YYYY');
   return dayjs(rightNow).format('MMMM D YYYY');
 };
 
@@ -119,7 +118,9 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', {
+    currentDay: formatDate(),
+  });
 });
 
 // POSTS page
